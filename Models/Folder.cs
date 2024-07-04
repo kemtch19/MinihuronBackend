@@ -15,7 +15,6 @@ namespace MinihuronBackend.Models
         [Required(ErrorMessage = "Possible null Name of Folder")]
         public string? Name { get; set; }
 
-        [Required(ErrorMessage ="Possible null value of parent folder")]
         public string? parentFolder { get; set; }
 
         [Required(ErrorMessage = "Possible null value")]

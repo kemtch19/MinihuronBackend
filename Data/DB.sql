@@ -1,4 +1,4 @@
--- Active: 1719439412347@@bzkguckw75lz4uaddpob-mysql.services.clever-cloud.com@3306@bzkguckw75lz4uaddpob
+-- Active: 1720050651415@@bzkguckw75lz4uaddpob-mysql.services.clever-cloud.com@3306@bzkguckw75lz4uaddpob
 CREATE TABLE users(
     id_user INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     Name VARCHAR(125) NOT NULL,
@@ -32,3 +32,5 @@ INSERT INTO archives (Name, FolderId, CreationDate) VALUES
 ("archive1", 1, "2020-02-02");
 
 SHOW TABLES;
+
+SELECT * FROM archives;
