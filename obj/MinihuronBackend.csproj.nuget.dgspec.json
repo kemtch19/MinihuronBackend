@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/riwip5-011/Documents/MinihuronBackend/MinihuronBackend/MinihuronBackend.csproj": {}
+    "/home/riwip5-042/Documents/MinihuronBackend/MinihuronBackend.csproj": {}
   },
   "projects": {
-    "/home/riwip5-011/Documents/MinihuronBackend/MinihuronBackend/MinihuronBackend.csproj": {
+    "/home/riwip5-042/Documents/MinihuronBackend/MinihuronBackend.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/riwip5-011/Documents/MinihuronBackend/MinihuronBackend/MinihuronBackend.csproj",
+        "projectUniqueName": "/home/riwip5-042/Documents/MinihuronBackend/MinihuronBackend.csproj",
         "projectName": "MinihuronBackend",
-        "projectPath": "/home/riwip5-011/Documents/MinihuronBackend/MinihuronBackend/MinihuronBackend.csproj",
-        "packagesPath": "/home/riwip5-011/.nuget/packages/",
-        "outputPath": "/home/riwip5-011/Documents/MinihuronBackend/MinihuronBackend/obj/",
+        "projectPath": "/home/riwip5-042/Documents/MinihuronBackend/MinihuronBackend.csproj",
+        "packagesPath": "/home/riwip5-042/.nuget/packages/",
+        "outputPath": "/home/riwip5-042/Documents/MinihuronBackend/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/riwip5-011/.nuget/NuGet/NuGet.Config"
+          "/home/riwip5-042/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
