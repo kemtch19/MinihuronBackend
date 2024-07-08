@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+using MinihuronBackend.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
@@ -12,7 +14,7 @@ builder.Services.AddCors(Options=>{
 });
 
 // Configuración del servicio de la base de datos
-builder.Services.AddDbContext<PracticaFiltroContext>(Options =>
+builder.Services.AddDbContext<MiniHuronContext>(Options =>
     Options.UseMySql(builder.Configuration.GetConnectionString("PracticaFiltroDB"),
     Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")));
 
