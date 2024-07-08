@@ -15,13 +15,17 @@ namespace MinihuronBackend.Models
         [Required(ErrorMessage = "Possible null Name of Folder")]
         public string? Name { get; set; }
 
-        public string? parentFolder { get; set; }
+
+        public string? parentFolderId { get; set; }
+
 
         [Required(ErrorMessage = "Possible null value")]
         public int? UserId{ get; set; }
         public User? User{ get; set; }
 
         [JsonIgnore]
-        public List<Archive>? Archives { get; set; }
+        public Folder? parentFolder { get; set; }
+        public ICollection<Folder>? subFolder { get; set; } = new List<Folder>();
+        public ICollection<Archive>? Files { get; set; } = new List<Archive>();
     }
 }

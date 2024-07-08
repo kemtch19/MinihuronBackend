@@ -21,6 +21,10 @@ namespace MinihuronBackend.Models
         [Required(ErrorMessage = "possible null value for creationDate")]
         public DateOnly? CreationDate { get; set; }
 
+        [Required(ErrorMessage = "possible null value for FilePath")]
+        public string? FilePath { get; set; }
+
+        [Required(ErrorMessage = "possible null value for FolderId")]
         public int FolderId { get; set; }
 
         [JsonIgnore]
