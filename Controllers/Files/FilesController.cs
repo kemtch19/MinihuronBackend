@@ -25,7 +25,7 @@ namespace MinihuronBackend.Controllers.Files
             if (file == null || file.Length == 0)
                 return BadRequest("No file provided");
 
-            var folder = await _context.Folders.FindAsync(folderId);
+            var folder = await _context.folders.FindAsync(folderId);
 
             if (folder == null)
             {
@@ -62,9 +62,9 @@ namespace MinihuronBackend.Controllers.Files
 
             Folder parentFolder = null;
 
-            if (model.parentFolderId.HasValue)
+            if (model.parentFolderId.HasValue)  
             {
-                parentFolder = await _context.Folders.FindAsync(model.parentFolderId.Value);
+                parentFolder = await _context.folders.FindAsync(model.parentFolderId.Value);
                 if (parentFolder == null)
                 {
                     return NotFound("Parent folder not found");
@@ -78,15 +78,16 @@ namespace MinihuronBackend.Controllers.Files
                 UserId = model.userId
             };
 
-            _context.Folders.Add(folder);
+            _context.folders.Add(folder);
             await _context.SaveChangesAsync();
             return Ok(folder);
         }
 
         [HttpGet("folders")]
-        public async Task<IActionResult> GetFolders(int userId)
+        public async Task<IActionResult> GetFolders()
         {
-            var folders = await _context.Folders.Include(u => u.User).ToListAsync();
+            List<Folder> folders = await _context.folders.Include(f => f.User).ToListAsync();
+            Console.WriteLine(folders[0]);
             return Ok(folders);
         }
     }

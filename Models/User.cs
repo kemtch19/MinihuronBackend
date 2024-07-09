@@ -11,9 +11,9 @@ namespace MinihuronBackend.Models
     [Table("users")]
     public class User
     {
-        [Required]
+        [Key]
         [Column("id_user")]
-        public int Id{ get; set; }
+        public int id_user{ get; set; }
 
         [Column("Name")]
         [Required(ErrorMessage = "Possible null Name User")]
@@ -36,6 +36,6 @@ namespace MinihuronBackend.Models
         public string? Token{ get; set; }
 
         [JsonIgnore]
-        public Folder? Folder { get; set; }
+        public ICollection<Folder>? Folder { get; set; } = new List<Folder>();
     }
 }

@@ -1,10 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
 
 namespace MinihuronBackend.Models
 {
@@ -19,17 +15,18 @@ namespace MinihuronBackend.Models
         [Required(ErrorMessage = "Possible null value for Name of Archive")]
         public string? Name { get; set; }
         
-        [Column("FilePath")]
-        [Required(ErrorMessage = "possible null value for FilePath")]
-        public string? FilePath { get; set; }
-        
         [Column("FolderId")]
         [Required(ErrorMessage = "possible null value for FolderId")]
         public int FolderId { get; set; }
-
+        
         [Column("CreationDate")]
         [Required(ErrorMessage = "possible null value for creationDate")]
         public DateOnly CreationDate { get; set; }
+        
+        [Column("FilePath")]
+        [Required(ErrorMessage = "possible null value for FilePath")]
+        public string? FilePath { get; set; }
+
 
 
         [JsonIgnore]

@@ -15,7 +15,7 @@ builder.Services.AddControllers();
 builder.Services.AddCors(options=>{
     options.AddDefaultPolicy(builder =>
     {
-        builder.WithOrigins("http://127.0.0.1:5500") // Actualiza la URL según sea necesario
+        builder.WithOrigins("http://127.0.0.1:5226") // Actualiza la URL según sea necesario
                 .AllowAnyHeader()
                 .AllowAnyMethod();
     });

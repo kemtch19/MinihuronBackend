@@ -12,7 +12,7 @@ namespace MinihuronBackend.Data
         public MiniHuronContext(DbContextOptions<MiniHuronContext> options) : base(options){}
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Folder> Folders { get; set; }
+        public DbSet<Folder> folders { get; set; }
         public DbSet<Archive> Files { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace MinihuronBackend.Data
             .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Folder>()
-            .HasMany(f=>f.subFolder)
+            .HasMany(f=>f.Subfolder)
             .WithOne(f=>f.ParentFolder)
             .HasForeignKey(f=>f.parentFolderId)
             .OnDelete(DeleteBehavior.Restrict);
