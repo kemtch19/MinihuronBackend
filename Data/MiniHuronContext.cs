@@ -22,6 +22,12 @@ namespace MinihuronBackend.Data
             .WithMany(f=>f.Archive)
             .HasForeignKey(f=>f.FolderId)
             .onDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<Folder>()
+            .HasMany(f=>f.subFolder)
+            .WithOne(f=>f.parentFolder)
+            .HasForeignKey(f=>f.parentFolderId)
+            .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
