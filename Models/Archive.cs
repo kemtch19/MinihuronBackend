@@ -13,11 +13,15 @@ namespace MinihuronBackend.Models
     {
         [Key]
         [Column("id")]
-        public int Id { get; set; }
+        public int id { get; set; }
 
         [Column("Name")]
         [Required(ErrorMessage = "Possible null value for Name of Archive")]
         public string? Name { get; set; }
+        
+        [Column("FilePath")]
+        [Required(ErrorMessage = "possible null value for FilePath")]
+        public string? FilePath { get; set; }
         
         [Column("FolderId")]
         [Required(ErrorMessage = "possible null value for FolderId")]
@@ -25,11 +29,8 @@ namespace MinihuronBackend.Models
 
         [Column("CreationDate")]
         [Required(ErrorMessage = "possible null value for creationDate")]
-        public DateOnly? CreationDate { get; set; }
+        public DateOnly CreationDate { get; set; }
 
-        [Column("FilePath")]
-        [Required(ErrorMessage = "possible null value for FilePath")]
-        public string? FilePath { get; set; }
 
         [JsonIgnore]
         public Folder? Folder { get; set; }

@@ -1,4 +1,7 @@
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using MinihuronBackend.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +19,25 @@ builder.Services.AddCors(options=>{
                 .AllowAnyHeader()
                 .AllowAnyMethod();
     });
+});
+
+// Builder para JWT con el token
+builder.Services.AddAuthentication(opt =>
+{
+    opt.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    opt.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+}).AddJwtBearer(configure =>
+{
+    configure.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidateIssuer = true,
+        ValidateAudience = true,
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true,
+        ValidIssuer = @Environment.GetEnvironmentVariable("jwtVar"),
+        ValidAudience = @Environment.GetEnvironmentVariable("jwtVar"),
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("3C7A6C4E2754B9A31F225E201C02D82E"))
+    };
 });
 
 // Configuración del servicio de la base de datos

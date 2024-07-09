@@ -1,4 +1,4 @@
--- Active: 1720532994369@@bzkguckw75lz4uaddpob-mysql.services.clever-cloud.com@3306@bzkguckw75lz4uaddpob
+-- Active: 1720050651415@@bzkguckw75lz4uaddpob-mysql.services.clever-cloud.com@3306@bzkguckw75lz4uaddpob
 CREATE TABLE users(
     id_user INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     Name VARCHAR(125) NOT NULL,
@@ -9,7 +9,7 @@ CREATE TABLE users(
 );
 
 INSERT INTO users (Name, Email, Password, Phone, Token) VALUES 
-("Daniel", "test@gmail.com", "1234", "31454656", "5132sda");
+("Montiel", "test2@gmail.com", "098765", "3123151", "13213124123");
 
 CREATE TABLE folders(
     id_folder INT AUTO_INCREMENT PRIMARY KEY NOT NULL,

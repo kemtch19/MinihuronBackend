@@ -86,7 +86,7 @@ namespace MinihuronBackend.Controllers.Files
         [HttpGet("folders")]
         public async Task<IActionResult> GetFolders(int userId)
         {
-            var folders = await _context.Folders.Where(f => f.UserId == userId).ToListAsync();
+            var folders = await _context.Folders.Include(u => u.User).ToListAsync();
             return Ok(folders);
         }
     }

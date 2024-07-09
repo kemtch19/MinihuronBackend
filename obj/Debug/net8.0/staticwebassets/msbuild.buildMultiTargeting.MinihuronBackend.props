@@ -1,3 +1,3 @@
 ﻿<Project>
-  <Import Project="..\build\MinihuronBackend.props" />
+  <Import Project="../build/MinihuronBackend.props" />
 </Project>

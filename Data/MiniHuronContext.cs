@@ -27,7 +27,7 @@ namespace MinihuronBackend.Data
             .HasMany(f=>f.subFolder)
             .WithOne(f=>f.ParentFolder)
             .HasForeignKey(f=>f.parentFolderId)
-            .OnDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Restrict);
         }
     }
 }

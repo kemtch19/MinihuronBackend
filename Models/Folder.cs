@@ -29,7 +29,9 @@ namespace MinihuronBackend.Models
 
         [JsonIgnore]
         public Folder? ParentFolder { get; set; }
+        [JsonIgnore]
         public ICollection<Folder>? subFolder { get; set; } = new List<Folder>();
+        [JsonIgnore]
         public ICollection<Archive>? Files { get; set; } = new List<Archive>();
     }
 }
