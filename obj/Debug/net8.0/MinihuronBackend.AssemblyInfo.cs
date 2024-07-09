@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MinihuronBackend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+92e19b7d706488e0300608afb7845e90c686a046")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+0c2a550ada2075fe175ecdfbff3dd49542022272")]
 [assembly: System.Reflection.AssemblyProductAttribute("MinihuronBackend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MinihuronBackend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

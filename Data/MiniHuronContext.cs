@@ -19,7 +19,7 @@ namespace MinihuronBackend.Data
         {
             modelBuilder.Entity<Archive>()
             .HasOne(f=>f.Folders)
-            .WithMany(f=>f.Files)
+            .WithMany(f=>f.Archive)
             .HasForeignKey(f=>f.FolderId)
             .onDelete(DeleteBehavior.Cascade);
         }
