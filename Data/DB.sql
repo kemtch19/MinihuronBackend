@@ -1,4 +1,4 @@
--- Active: 1720050651415@@bzkguckw75lz4uaddpob-mysql.services.clever-cloud.com@3306@bzkguckw75lz4uaddpob
+-- Active: 1720532994369@@bzkguckw75lz4uaddpob-mysql.services.clever-cloud.com@3306@bzkguckw75lz4uaddpob
 CREATE TABLE users(
     id_user INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     Name VARCHAR(125) NOT NULL,
@@ -14,8 +14,9 @@ INSERT INTO users (Name, Email, Password, Phone, Token) VALUES
 CREATE TABLE folders(
     id_folder INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     Name VARCHAR(255) NOT NULL,
-    parenFolderId INT NOT NULL,
-    UserId INT NOT NULL
+    parentFolderId INT NOT NULL,
+    UserId INT NOT NULL,
+    Foreign Key (parentFolderId) REFERENCES folders(id_folder)
 );
 
 INSERT INTO folders (Name, `parentFolderId`, `UserId`) VALUES 

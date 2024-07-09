@@ -9,16 +9,23 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddControllers();
 
 // Agregamos el servicio de los cors ya que necesitamos configurar de manera correcta los cors para dejar pasar a la persona o ip que tengamos identificada en nuestra lista pero de momento solamente que este ahí para dejar pasar a las personas desde el backend ya si queremos que no todos pase hay que configurarlo
-builder.Services.AddCors(Options=>{
-    Options.AddPolicy("AllowAnyOrigin", builder => builder.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
+builder.Services.AddCors(options=>{
+    options.AddDefaultPolicy(builder =>
+    {
+        builder.WithOrigins("http://127.0.0.1:5500") // Actualiza la URL según sea necesario
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+    });
 });
 
 // Configuración del servicio de la base de datos
 builder.Services.AddDbContext<MiniHuronContext>(Options =>
-    Options.UseMySql(builder.Configuration.GetConnectionString("PracticaFiltroDB"),
+    Options.UseMySql(builder.Configuration.GetConnectionString("MinihuronDB"),
     Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.20-mysql")));
 
 var app = builder.Build();
+
+app.UseCors();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -28,6 +35,8 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.UseAuthorization();
 
 // Usamos los cors que previamente configuramos
 app.UseCors("AllowAnyOrigin");

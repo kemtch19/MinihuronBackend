@@ -62,9 +62,9 @@ namespace MinihuronBackend.Controllers.Files
 
             Folder parentFolder = null;
 
-            if (ModelState.parentFolder.HasValue)
+            if (model.parentFolderId.HasValue)
             {
-                parentFolder = await _context.Folders.FindAsync(model.parentFolder.Value);
+                parentFolder = await _context.Folders.FindAsync(model.parentFolderId.Value);
                 if (parentFolder == null)
                 {
                     return NotFound("Parent folder not found");
@@ -74,8 +74,8 @@ namespace MinihuronBackend.Controllers.Files
             var folder = new Folder
             {
                 Name = model.Name,
-                parentFolderId = model.parentFolder,
-                UserId = model.parentFolder
+                parentFolderId = model.parentFolderId,
+                UserId = model.userId
             };
 
             _context.Folders.Add(folder);

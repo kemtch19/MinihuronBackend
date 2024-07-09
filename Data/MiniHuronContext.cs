@@ -18,14 +18,14 @@ namespace MinihuronBackend.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Archive>()
-            .HasOne(f=>f.Folders)
-            .WithMany(f=>f.Archive)
+            .HasOne(f=>f.Folder)
+            .WithMany(f=>f.Files)
             .HasForeignKey(f=>f.FolderId)
-            .onDelete(DeleteBehavior.Cascade);
+            .OnDelete(DeleteBehavior.Cascade);
 
             modelBuilder.Entity<Folder>()
             .HasMany(f=>f.subFolder)
-            .WithOne(f=>f.parentFolder)
+            .WithOne(f=>f.ParentFolder)
             .HasForeignKey(f=>f.parentFolderId)
             .OnDelete(DeleteBehavior.Cascade);
         }
