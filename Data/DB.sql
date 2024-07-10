@@ -20,7 +20,6 @@ CREATE TABLE folders(
     Foreign Key (UserId) REFERENCES users(id_user)
 );
 
-DROP TABLE folders;
 
 INSERT INTO folders (Name, `UserId`) VALUES 
 ("folder1", 1);

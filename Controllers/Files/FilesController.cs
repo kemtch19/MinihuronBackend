@@ -95,6 +95,7 @@ namespace MinihuronBackend.Controllers.Files
         public async Task<ActionResult> DeleteFolder(int id)
         {
             var folder = await _context.folders.FindAsync(id);
+            System.Console.WriteLine(folder);
             if (folder == null)
             {
                 return NotFound();
