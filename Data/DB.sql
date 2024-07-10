@@ -1,4 +1,4 @@
--- Active: 1719439412347@@bzkguckw75lz4uaddpob-mysql.services.clever-cloud.com@3306@bzkguckw75lz4uaddpob
+-- Active: 1720637099047@@bzkguckw75lz4uaddpob-mysql.services.clever-cloud.com@3306
 CREATE TABLE users(
     id_user INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     Name VARCHAR(125) NOT NULL,
@@ -22,8 +22,8 @@ CREATE TABLE folders(
 
 DROP TABLE folders;
 
-INSERT INTO folders (Name, `parentFolderId`, `UserId`) VALUES 
-("folder1", 1, 1);
+INSERT INTO folders (Name, `UserId`) VALUES 
+("folder1", 1);
 
 CREATE TABLE archives(
     id INT AUTO_INCREMENT PRIMARY KEY,

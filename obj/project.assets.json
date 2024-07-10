@@ -6116,19 +6116,19 @@
     ]
   },
   "packageFolders": {
-    "/home/riwip5-011/.nuget/packages/": {}
+    "/home/riwip5-034/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/riwip5-011/Documents/MinihuronBackend/MinihuronBackend.csproj",
+      "projectUniqueName": "/home/riwip5-034/Downloads/MinihuronBackend/MinihuronBackend.csproj",
       "projectName": "MinihuronBackend",
-      "projectPath": "/home/riwip5-011/Documents/MinihuronBackend/MinihuronBackend.csproj",
-      "packagesPath": "/home/riwip5-011/.nuget/packages/",
-      "outputPath": "/home/riwip5-011/Documents/MinihuronBackend/obj/",
+      "projectPath": "/home/riwip5-034/Downloads/MinihuronBackend/MinihuronBackend.csproj",
+      "packagesPath": "/home/riwip5-034/.nuget/packages/",
+      "outputPath": "/home/riwip5-034/Downloads/MinihuronBackend/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/home/riwip5-011/.nuget/NuGet/NuGet.Config"
+        "/home/riwip5-034/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -6214,8 +6214,20 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.105/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/lib/dotnet/sdk/8.0.107/PortableRuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1903",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'System.Text.Json' 8.0.3 has a known high severity vulnerability, https://github.com/advisories/GHSA-hh2w-p6rv-4g7w",
+      "libraryId": "System.Text.Json",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    }
+  ]
 }

@@ -62,7 +62,7 @@ namespace MinihuronBackend.Controllers.Files
 
             Folder parentFolder = null;
 
-            if (model.parentFolderId.HasValue)  
+            if (model.parentFolderId.HasValue)
             {
                 parentFolder = await _context.folders.FindAsync(model.parentFolderId.Value);
                 if (parentFolder == null)
@@ -89,6 +89,19 @@ namespace MinihuronBackend.Controllers.Files
             List<Folder> folders = await _context.folders.Include(f => f.User).ToListAsync();
             Console.WriteLine(folders[0]);
             return Ok(folders);
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<ActionResult> DeleteFolder(int id)
+        {
+            var folder = await _context.folders.FindAsync(id);
+            if (folder == null)
+            {
+                return NotFound();
+            }
+            _context.folders.Remove(folder);
+            await _context.SaveChangesAsync();
+            return NoContent();
         }
     }
 }

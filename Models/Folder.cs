@@ -19,15 +19,14 @@ namespace MinihuronBackend.Models
         public int? parentFolderId { get; set; }
         
         [JsonIgnore]
-        public Folder? ParentFolder { get; set; }
+        public Folder? parentFolder { get; set; }
 
         [Required(ErrorMessage = "Possible null value")]
         public int? UserId{ get; set; }
         public User? User{ get; set; }
 
-        [JsonIgnore]
-
         public ICollection<Folder> Subfolder { get; set; } = new List<Folder>();
+        
         [JsonIgnore]
         public ICollection<Archive> Files { get; set; } = new List<Archive>();
     }
