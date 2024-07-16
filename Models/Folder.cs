@@ -29,5 +29,5 @@ namespace MinihuronBackend.Models
         
         [JsonIgnore]
         public ICollection<Archive> Files { get; set; } = new List<Archive>();
-    }
+    }   
 }

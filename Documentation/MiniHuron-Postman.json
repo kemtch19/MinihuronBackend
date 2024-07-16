@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "d47941c3-a5bf-437a-a468-86a43e051fed",
+		"name": "MiniHuron",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "32236411",
+		"_collection_link": "https://coupons-1572.postman.co/workspace/MiniHuron~108c2138-3167-457c-910d-8178ef9ec6fb/collection/32236411-d47941c3-a5bf-437a-a468-86a43e051fed?action=share&source=collection_link&creator=32236411"
+	},
+	"item": [
+		{
+			"name": "Folders",
+			"item": [
+				{
+					"name": "GetFolders",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjExMzcxODEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA0NyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA0NyJ9.HZWzhf99rQZQmMsWiOfqjq7MweaS5YbC1DnHZ4flEbc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/Folders",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Folders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "CreateFolder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjExMzcxODEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA0NyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA0NyJ9.HZWzhf99rQZQmMsWiOfqjq7MweaS5YbC1DnHZ4flEbc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Folder4\",\r\n  \"parentFolderId\": 6,\r\n  \"userId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Folders/create-folder",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Folders",
+								"create-folder"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DeleteFolder",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3MjExMzcxODEsImlzcyI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA0NyIsImF1ZCI6Imh0dHA6Ly9sb2NhbGhvc3Q6NTA0NyJ9.HZWzhf99rQZQmMsWiOfqjq7MweaS5YbC1DnHZ4flEbc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/Folders/delete/10",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"Folders",
+								"delete",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "CreateToken",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test@gmail.com\",\r\n  \"password\": \"1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/auth/jwt",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"auth",
+								"jwt"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

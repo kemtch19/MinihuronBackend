@@ -1,4 +1,5 @@
--- Active: 1720637099047@@bzkguckw75lz4uaddpob-mysql.services.clever-cloud.com@3306
+-- Active: 1721134692719@@bzkguckw75lz4uaddpob-mysql.services.clever-cloud.com@3306@bzkguckw75lz4uaddpob
+
 CREATE TABLE users(
     id_user INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     Name VARCHAR(125) NOT NULL,

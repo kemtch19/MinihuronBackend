@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MinihuronBackend.Data;
@@ -11,6 +12,7 @@ namespace MinihuronBackend.Controllers.Files
 {
     [ApiController]
     [Route("/api/[controller]")]
+    [Authorize]
     public class FilesController : ControllerBase
     {
         private readonly MiniHuronContext _context;
@@ -52,57 +54,6 @@ namespace MinihuronBackend.Controllers.Files
             return Ok(new { message = "File uploaded successfully.", filePath });
         }
 
-        [HttpPost("create-folder")]
-        public async Task<IActionResult> CreateFolder([FromBody] FolderCreation model)
-        {
-            if (!ModelState.IsValid)
-            {
-                return BadRequest(ModelState);
-            }
-
-            Folder parentFolder = null;
-
-            if (model.parentFolderId.HasValue)
-            {
-                parentFolder = await _context.folders.FindAsync(model.parentFolderId.Value);
-                if (parentFolder == null)
-                {
-                    return NotFound("Parent folder not found");
-                }
-            }
-
-            var folder = new Folder
-            {
-                Name = model.Name,
-                parentFolderId = model.parentFolderId,
-                UserId = model.userId
-            };
-
-            _context.folders.Add(folder);
-            await _context.SaveChangesAsync();
-            return Ok(folder);
-        }
-
-        [HttpGet("folders")]
-        public async Task<IActionResult> GetFolders()
-        {
-            List<Folder> folders = await _context.folders.Include(f => f.User).ToListAsync();
-            Console.WriteLine(folders[0]);
-            return Ok(folders);
-        }
-
-        [HttpDelete("{id}")]
-        public async Task<ActionResult> DeleteFolder(int id)
-        {
-            var folder = await _context.folders.FindAsync(id);
-            System.Console.WriteLine(folder);
-            if (folder == null)
-            {
-                return NotFound();
-            }
-            _context.folders.Remove(folder);
-            await _context.SaveChangesAsync();
-            return NoContent();
-        }
+        
     }
 }
