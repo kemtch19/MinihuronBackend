@@ -5,12 +5,14 @@ CREATE TABLE users(
     Name VARCHAR(125) NOT NULL,
     Email VARCHAR(125) UNIQUE NOT NULL,
     Password VARCHAR(125) NOT NULL,
-    Phone VARCHAR(125) NOT NULL,
-    Token VARCHAR(255) NOT NULL
+    Phone VARCHAR(125) NOT NULL
 );
 
-INSERT INTO users (Name, Email, Password, Phone, Token) VALUES 
-("Montiel", "test2@gmail.com", "098765", "3123151", "13213124123");
+drop table users;
+
+INSERT INTO users (Name, Email, Password, Phone) VALUES 
+("Montiel", "test2@gmail.com", "098765", "3123151"),
+("John", "John@gmail.com", "john1234", "4112332");
 
 CREATE TABLE folders(
     id_folder INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
@@ -21,6 +23,7 @@ CREATE TABLE folders(
     Foreign Key (UserId) REFERENCES users(id_user)
 );
 
+DROP TABLE folders;
 
 INSERT INTO folders (Name, `UserId`) VALUES 
 ("folder1", 1);
@@ -41,4 +44,4 @@ INSERT INTO archives (Name, FolderId, CreationDate, `FilePath`) VALUES
 
 SHOW TABLES;
 
-SELECT * FROM users;
+SELECT * FROM archives;

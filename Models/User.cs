@@ -31,10 +31,6 @@ namespace MinihuronBackend.Models
         [Required(ErrorMessage = "Possible null phone User")]
         public string? Phone { get; set; }
 
-        [Column("Token")]
-        [Required(ErrorMessage = "Possible null Token User")]
-        public string? Token{ get; set; }
-
         [JsonIgnore]
         public ICollection<Folder>? Folder { get; set; } = new List<Folder>();
     }

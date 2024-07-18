@@ -6122,11 +6122,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Riwi\\Desarrollo de Software\\C#\\MinihuronBackend\\MinihuronBackend.csproj",
+      "projectUniqueName": "C:\\Users\\maico\\Documents\\MinihuronBackend\\MinihuronBackend.csproj",
       "projectName": "MinihuronBackend",
-      "projectPath": "D:\\Riwi\\Desarrollo de Software\\C#\\MinihuronBackend\\MinihuronBackend.csproj",
+      "projectPath": "C:\\Users\\maico\\Documents\\MinihuronBackend\\MinihuronBackend.csproj",
       "packagesPath": "C:\\Users\\maico\\.nuget\\packages\\",
-      "outputPath": "D:\\Riwi\\Desarrollo de Software\\C#\\MinihuronBackend\\obj\\",
+      "outputPath": "C:\\Users\\maico\\Documents\\MinihuronBackend\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

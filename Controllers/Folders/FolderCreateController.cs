@@ -10,7 +10,7 @@ using MinihuronBackend.Models;
 namespace MinihuronBackend.Controllers.Folders
 {
     [ApiController]
-    [Route("/api/Folders")]
+    [Route("/api/Folders/create")]
     [Authorize]
     public class FolderCreateController : ControllerBase
     {

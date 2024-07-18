@@ -10,7 +10,7 @@ using MinihuronBackend.Models;
 namespace MinihuronBackend.Controllers.Folders
 {
     [ApiController]
-    [Route("/api/")]
+    [Route("/api/Folders")]
     public class FoldersController : ControllerBase
     {
         private readonly MiniHuronContext _context;

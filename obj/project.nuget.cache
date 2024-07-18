@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "rpgspVBLzXU=",
+  "dgSpecHash": "GP5v1+etUY0=",
   "success": true,
-  "projectFilePath": "D:\\Riwi\\Desarrollo de Software\\C#\\MinihuronBackend\\MinihuronBackend.csproj",
+  "projectFilePath": "C:\\Users\\maico\\Documents\\MinihuronBackend\\MinihuronBackend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\maico\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\maico\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.7\\microsoft.aspnetcore.authentication.jwtbearer.8.0.7.nupkg.sha512",
